@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("image/Bitmap.jpg");
+    background-size: 100vw;
+    margin: 0 auto;
+}
+
+main {
+    color: #FFFFFF;
+    max-width: 90rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+header img {
+    margin: 0 0 0 3rem;
+}
+.content {
+    width: 30rem;
+    margin: 0 5rem;
+}
+
+.title-text {
+    transform: scale(1, 1.4);
+    letter-spacing: 4px;
+    font-family: "Barlow Condensed", Impact;
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.emphasis-text {
+    font-family: "Bellefair";
+    font-weight: 100;
+    font-size: 150px;
+    margin: 0;
+}
+
+.description-text {
+    font-family: "Barlow", sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 2.5rem;
+    letter-spacing: 2.7px;
+}
+button {
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.button-container {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 10rem;
+}
+.button {
+    display: inline-block;
+      font-size: 32px;
+      font-weight: 100;
+      cursor: pointer;
+      margin: 0 67px;
+      width: auto;
+      min-width: 274px;
+      height: 274px;
+      border-radius: 9999px;
+      line-height: 58px;
+      padding: 0 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      color: #0B0D17;
+      font-weight: bold;
+      border: 3px solid #0B0D17;
+      background: #fff;
+      box-sizing: border-box;
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      font-family: 'Bellefair';
+      letter-spacing: 0;
+      text-decoration:none;
+}
+.sonar-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background-color: red;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .button:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    content: '';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.button:after {
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: -1;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+ .button:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+.button:hover:after {
+    -webkit-animation: sonarEffect .5s ease-out .2ms;
+    -moz-animation: sonarEffect .5s ease-out .2ms;
+    animation: sonarEffect .5s ease-out .2ms;
+}
+
+@keyframes sonarEffect {
+    from {
+        opacity: 1;
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1), 0 0 1px 0px rgba(255, 255, 255, 0.5);
+    }
+
+    to {
+        opacity: 0;
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.3), 0 0 1px 100px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    html, body {
+        min-height: 100%;
+        background-image: url("image/BitmapTablet.jpg");
+    }
+    
+    main {
+        align-items: center;
+        max-width: 90rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .button {
+        position: relative;
+        margin: 32px auto;
+        border-radius: 9999px;
+        background-color: #FFFFFF;
+        width: 225px;
+        height: 225px;
+        font-family: "Bellefair";
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    body {
+        background-image: url("image/BitmapTablet.jpg");
+        background-size: 175vw;
+
+    }
+    
+
+    main {
+        color: #FFFFFF;
+        max-width: 23.438rem;
+        margin: 0 6rem;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80%;
+    }
+
+    .title-text {
+        transform: scale(1, 1.4);
+        letter-spacing: 4px;
+        font-family: "Barlow Condensed", Impact;
+        font-weight: normal;
+        font-size: 14px;
+        color: #D0D6F9;
+    }
+
+    .emphasis-text {
+        font-size: 5rem;
+    }
+
+    .description-text {
+        margin: 0 auto;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: 1.5rem;
+        max-width: 20rem;
+        color: #D0D6F9
+    }
+
+    .button {
+        border-radius: 50%;
+        cursor: pointer;
+        min-width: 150px;
+        font-family: "Bellefair";
+    }
+
+    .content {
+        width: 30rem;
+        margin: 0 0 3rem 0;
+    }
+  }
+
+  
